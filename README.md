@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Property Rental Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The Property Rental Platform is a web application designed to showcase various properties available for rent. Users can browse through a list of properties, filter them based on different criteria, and add properties to their booking cart. The platform provides a seamless user experience, allowing users to manage their bookings efficiently.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Property Listing**: Displays a list of properties with details such as title, description, price, location, and amenities.
+- **Filtering**: Users can filter properties based on location, price range, number of bedrooms, and amenities.
+- **Booking Cart**: Users can add properties to their cart, manage the quantity of bookings, and view the total cost.
+- **Responsive Design**: The application is designed to be responsive and works well on different device sizes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Frontend
+- **React.js**: A JavaScript library for building user interfaces. The application is structured using React components, which manage the UI and the state of the application.
+- **Tailwind CSS**: A utility-first CSS framework that provides a responsive design out-of-the-box. It was used for styling the components, ensuring a clean and consistent UI.
+- **Material UI**: A React component library that implements Google's Material Design. Used for additional UI components like buttons, modals, etc.
 
-### `npm test`
+### Additional Tools
+- **JavaScript (ES6+)**: The primary language for writing logic and managing the state within React components.
+- **Webpack/Babel**: For bundling and transpiling JavaScript code.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+- **`src/components/PropertyList.js`**: This component is responsible for rendering the list of properties and applying filters. It also includes the `BookingCart` component, which handles the booking cart logic.
+  
+- **`src/components/PropertyCard.js`**: A reusable component that displays individual property details and a button to book the property.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **`src/components/Filter.js`**: A component that allows users to filter properties based on location, price, bedrooms, and amenities.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **`src/components/BookingCart.js`**: Manages the state of the booking cart, allowing users to increase/decrease the quantity of bookings, remove properties from the cart, and view the total cost.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Approach
 
-### `npm run eject`
+### Component Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The application is divided into reusable components, each responsible for a specific part of the UI. This modular approach makes the application easy to maintain and scale.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### State Management
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+State is managed using React’s `useState` hook. The `PropertyList` component maintains the state for filtered properties and passes the relevant data to `PropertyCard` components. The `BookingCart` component independently manages the state of the cart, handling all logic related to booking, updating quantities, and removing items.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Styling
 
-## Learn More
+Tailwind CSS is used for most of the styling, ensuring a responsive and modern design. Material UI is selectively used for additional UI elements that require more complex interactions or specific design guidelines.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Cart Logic
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The cart logic was originally managed within the `PropertyList` component but was refactored to reside entirely within the `BookingCart` component. This separation of concerns ensures that the cart logic is encapsulated within its component, making the codebase cleaner and more maintainable.
 
-### Code Splitting
+### Future Enhancements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Backend Integration**: Integrate with a backend API to fetch real-time property data and manage user bookings persistently.
+- **Authentication**: Implement user authentication to save and manage user-specific bookings.
+- **Payment Gateway**: Integrate a payment gateway for users to complete their bookings directly within the platform.
+- **Advanced Filtering**: Add more sophisticated filtering options like date availability, property type, and user ratings.
 
-### Analyzing the Bundle Size
+## How to Run the Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/yourusername/property-rental-platform.git
+    cd property-rental-platform
+    ```
 
-### Making a Progressive Web App
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. **Start the development server**:
+    ```bash
+    npm start
+    ```
+    The application will be accessible at `http://localhost:3000`.
 
-### Advanced Configuration
+4. **Build the project for production**:
+    ```bash
+    npm run build
+    ```
+    This will create an optimized build of the project in the `build` directory.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
