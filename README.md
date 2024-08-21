@@ -61,8 +61,8 @@ The cart logic was originally managed within the `PropertyList` component but wa
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/property-rental-platform.git
-    cd property-rental-platform
+    git clone https://github.com/Prachikesharwani/totality-frontend-challenge.git
+    cd totality-frontend-challenge
     ```
 
 2. **Install dependencies**:
